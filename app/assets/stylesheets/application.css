@@ -95,7 +95,7 @@
   margin: auto;
 }
 
-#introduce {
-background-image: image-url("phone4.PNG");
+#introduce{
+  background-image: url("phone4.PNG");
 /*background-size: cover;*/
 }
