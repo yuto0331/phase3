@@ -1,0 +1,40 @@
+<div class="container">
+    <p id="notice"><%= notice %></p>
+    
+    <p>ユーザー名　　：<%= @user.name %></p>
+    <p>メールアドレス：<%= @user.email %></p>
+    <p>
+    <%= image_tag @user.image, class: 'user_logo' %><strong><h3><%= @user.name %>のお気に入りページ</h3></strong>
+    </p>
+    <p>
+    
+    <dr>
+    
+    <p>
+    <h2><お気に入り一覧></h2>
+    </p>
+    <dr>
+    <% @favorite_pictures.each do |favorite_picture| %>
+    <ol>
+        
+        <li>投稿者：<%= favorite_picture.user.name %></li>
+        <li>内容　：<%= favorite_picture.content %></li>
+        <ui><%= link_to image_tag(favorite_picture.image), favorite_picture  %></ui>
+        
+    </ol>
+    <!--<%# @user.favorite_pictures.each do | abc | %>-->
+    <!--<ol>-->
+    <!--    <li>投稿者：<%##= favorite_pictures.user.name %></li>-->
+    <!--    <li>内容　：<%#= favorite_pictures.content %></li>-->
+    <!--    <ui><%#= link_to image_tag(favorite_pictures.image), picture_path  %></ui>-->
+        
+    <!--</ol>-->
+    
+    
+    
+    <% end %>
+    
+    
+    
+    <%= link_to '別のユーザーでログイン', edit_user_path(@user) %> 
+</div>

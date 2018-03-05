@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phase3</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    
+    
+    <header class ="header">
+    
+    <div class = "clearfix">
+    <div class = "camera">
+      <%= image_tag('/camera_red.PNG', :size => "40x40") %>
+    </div>
+      <h1 class ="insta">instagram(clone)</h1>
+    </div>
+    
+    <nav>
+      <% if logged_in? %>
+        <%= link_to "新規投稿", new_picture_path(current_user.id) %>
+        <%= link_to "一覧表示", pictures_path(current_user.id) %>
+        <%= link_to "お気に入り一覧", user_path(current_user.id) %>
+        <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+      <% else %>
+        <%= link_to "初めての新規登録", new_user_path %>
+        <%= link_to "ログイン", new_session_path %>
+      <% end %>
+    </nav>
+    </header>
+
+    <%= yield %>
+    </body>
+    <footer class="footer">
+      <p>2017年10月期生</p>
+      <p>2015-2016 Copyright DIVE INTO CODE Corp.</p>
+    </footer>
+</html>
