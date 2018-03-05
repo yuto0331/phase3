@@ -96,6 +96,6 @@
 }
 
 #introduce {
-background-image: url("phone4.PNG");
+background-image: image-url("phone4.PNG");
 /*background-size: cover;*/
 }
