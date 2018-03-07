@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file  #保存形式の設定
   # storage :fog
   #process :resize_to_limit => [50, 50]  #画像の調整
-  process :resize_to_limit => [50, 50]
+  
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
