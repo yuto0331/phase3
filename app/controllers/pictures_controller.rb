@@ -39,6 +39,7 @@ class PicturesController < ApplicationController
     
     respond_to do |format|
       if @picture.save
+        ContactMailer.contact_mail(@picture).deliver
         format.html { redirect_to @picture, notice: '写真が投稿されました' }
         format.json { render :show, status: :created, location: @picture }
       else
