@@ -28,11 +28,20 @@
   height: 100px;
 }
 
-.user_logo {
+.user_logo  {
   float:left;
   width: 25px;
   height: 25px;
 }
+
+.event_picture img {
+  float:left;
+  width: 100px;
+  height: 100px;
+}
+
+
+
 
 .header #camera_logo {
   float:left;

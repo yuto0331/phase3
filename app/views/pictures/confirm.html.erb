@@ -5,7 +5,7 @@
   <%= form.hidden_field :image %>
   
   <p>コメント：<%= @picture.content %></p>
-  <%= image_tag(@picture.image.url) %>
+  <p class = "event_picture"><%= image_tag(@picture.image.url) %></p>
   <%= hidden_field_tag :"cache[image]",@picture.image.cache_name %>
   <%= form.submit "投稿を確定" %>
           
